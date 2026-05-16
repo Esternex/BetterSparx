@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const antiDoxxToggle = document.getElementById("antiDoxToggle");
     const discordButton = document.getElementById("DiscordButton");
     const darkToggle = document.getElementById("DarkMode");
+    const copyCookiesButton = document.getElementById("CopyCookies");
 
     name = pullFullName()
 
@@ -114,5 +115,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer = NaN
             }
         }); 
+    }
+
+    if (copyCookiesButton) {
+        copyCookiesButton.addEventListener("click", () => {
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                const tabUrl = tabs[0].url;
+
+                chrome.runtime.sendMessage(
+                    { action: "getCookies", url: tabUrl },
+                    (response) => {
+                    if (!response.success) {
+                        alert("No cookies found for this site!");
+                        return;
+                    }
+
+                    // Copy cookies to clipboard
+                    navigator.clipboard.writeText(response.cookies)
+                        .then(() => alert("Cookies copied to clipboard!"))
+                        .catch(err => console.error("Clipboard error: ", err));
+                    }
+                );
+            });
+        });
     }
 });

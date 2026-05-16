@@ -16,6 +16,9 @@
   "host_permissions": [
     "*://*.sparx-learning.com/*"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["*://*.sparx-learning.com/*"],
