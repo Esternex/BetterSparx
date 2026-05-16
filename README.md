@@ -5,9 +5,4 @@ The extension is currently **NOT COMPLETE**, don't use it right now, it's in dev
 ## How to use the extension?
 ### Installation Guide:
 
-Press code and press download zip
-<img width="972" height="430" alt="image" src="https://github.com/user-attachments/assets/0113a003-1cd2-4fcc-9211-d5bda7a75d08" />
-
-Once it downloads, extract the file
-<img width="722" height="640" alt="image" src="https://github.com/user-attachments/assets/782b395e-d927-4d99-9095-e8391b49a2e9" />
-
+coming soon
