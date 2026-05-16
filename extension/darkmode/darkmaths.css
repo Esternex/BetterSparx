@@ -1,0 +1,190 @@
+:root {
+    --colours-primary: var(--palette-white);
+    --colours-interactable: var(--palette-light-blue);
+    /*#4f4f4a;*/
+    /* blue highlights */
+    --colours-nav-bar: #2a2a28;
+    --colours-nav-bar-hover: #2f2f2c;
+    --colours-page-background: #202020;
+    /* white background */
+    --colours-page-background-gradient: #2a2a28;
+    /* white background gradient for questions */
+    --colours-plain-background: #2a2a28;
+    /* panel bg */
+    --colours-plain-background-inverted: #3b3b37;
+    --colours-nested-item: #2f2f2c;
+    /* colour option bg 8 */
+    --colours-nested-item-hover: #3b3b37;
+    /* colour option bg 8 */
+    --colours-nested-item-correct: rgba(12 111 69 1);
+    --colours-text-heading: var(--palette-light-grey);
+    /*text*/
+    --colours-text-body: var(--palette-light-grey);
+    --colours-text-body-inverted: var(--palette-light-grey);
+    --colours-popover-overlay-background: rgba(44, 44, 41, 1);
+    --colours-locked: #202020;
+    --colours-locked-dark: #3b3b37;
+    --colours-disabled: #202020;
+    --colours-light-background: #202020;
+    /* lets make it not that */
+    /*changed */
+    --colours-background-info: #2a2a28;
+    --colours-background-highlighted: #3b3b37;
+    --colours-background-white-transparent: #3b3b37;
+    --colours-tab-hover: var(--palette-dark-blue);
+    --colours-text-secondary: var(--palette-white);
+    --colours-secondary: #3b3b37;
+    --colours-selected: var(--palette-light-blue);
+    --colours-primary: var(--palette-black);
+    --colours-background-light: var(--palette-black);
+    --colours-regular-background: #2f2f2c;
+    --colours-item-hover: #3b3b37;
+    --colours-item: #2f2f2c;
+    --colours-unstarted: var(--palette-light-grey);
+    --colours-question-background: #2f2f2c;
+    --question-text-colour: var(--palette-light-grey) !important;
+    --secondary-bg-hover: #3b3b37 !important;
+    --secondary-bg: #2f2f2c !important;
+    --spx-button-outlined-color: var(--palette-dark-blue) !important;
+    --swclient-background: linear-gradient(120.87deg, var(--colours-page-background) 0%, var(--colours-page-background) 48%, var(--colours-page-background-gradient) 48%, var(--colours-page-background) 100%);
+    --spx-shadow-sm: 0px 2px 2px rgba(74, 76, 82, 0.5);
+    --spx-shadow-sm-dark: 0px 2px 2px rgba(57, 60, 65, .3);
+    --spx-shadow-md: 0px 3px 5px rgba(57, 60, 65, .3);
+    --spx-shadow-md-dark: 0px 3px 5px rgba(57, 60, 65, .3);
+    --spx-shadow-md-extradark: 0px 3px 5px rgba(45, 45, 45, 1);
+    --spx-shadow-lg: 0px 4px 11px -1px rgba(45, 47, 50, 0.8);
+    --spx-shadow-lg-dark-blue: 0px 4px 11px -1px var(--palette-dark-blue);
+    --spx-shadow-lg-top: 0px -3px 11px rgba(128, 128, 128, .2);
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.SparxPlusSubHeading {
+    color: var(--palette-light-grey) !important
+}
+span {
+    color: var(--palette-light-grey)
+}
+a {
+    text-decoration-color: white;
+    color: white;
+}
+a:active {
+    text-decoration-color: #3b3b37;
+    color: #3b3b37;
+}
+/* changing colour of question text */
+/* this class is set by api.js */
+.SparxPlusTextElement {
+    --question-text-colour: var(--palette-light-grey) !important;
+    color: var(--question-text-colour);
+}
+/* changing colour of secondary buttons */
+/* this class is set by api.js */
+.SparxPlusSecondaryButton {
+    background-color: #2f2f2c;
+}
+.SparxPlusKeypadButton {
+    background-color: #3b3b37;
+    color: var(--palette-light-grey);
+}
+.SparxPlusIndependentLearningNoContentMessageText {
+    color: var(--palette-light-grey);
+}
+.SparxPlusInlineSlotOptions {
+    background-color: #3b3b37 !important;
+}
+.SparxPlusTable td,
+.SparxPlusTable tr,
+.SparxPlusTable th {
+    background-color: #3b3b37 !important;
+}
+.SparxPlusSecondaryButton:hover {
+    background-color: #3b3b37 !important;
+}
+.notificationDiv {
+    background-color: #2f2f2c !important;
+}
+.notificationText {
+    color: var(--palette-light-grey) !important;
+}
+.SparxPlusTopicFilterLabel {
+    color: var(--palette-light-grey) !important;
+}
+.SparxPlusSupportTipsText {
+    color: var(--palette-light-grey) !important;
+}
+.SparxPlusOption:hover {
+    background: #3b3b37 !important;
+}
+.SparxPlusOptionSelected:hover {
+    background: var(--button-colour) !important;
+}
+.SparxPlusCardContent {
+    background: #3b3b37 !important;
+}
+.SparxPlusCardContentSelected {
+    border-width: 5px;
+}
+.SparxPlusMarkByPart.SparxPlusIsCorrect {
+    background-color: #434d49 !important;
+}
+.SparxPlusMarkByPart {
+    background-color: rgb(93 80 80) !important;
+}
+.SparxPlusSelectShared {
+    background-color: #3b3b37 !important;
+}
+.SparxPlusTextFieldComponent,
+.SparxPlusTextField {
+    background: #3b3b37 !important;
+    color: var(--palette-light-grey);
+}
+.SparxPlusDisabled {
+    color: #7e7e78 !important;
+}
+.experimental {
+    color: white !important;
+}
+.SparxPlusButtonGhost:not(:disabled):hover {
+    background-color: rgba(128, 128, 128, .2);
+}
+.WarningText {
+    color: var(--colours-text-warning-message);
+}
+.SparxPlusWarning span {
+    color: var(--colours-text-warning-message);
+}
+.InfoText {
+    color: rgb(42 169 173);
+}
+/* make loading screen dark, make question flashing disappear */
+body {
+    background-color: #2a2a28;
+}
+* {
+    --scrollbar-color-thumb: #3b3b37;
+    --scrollbar-color-track: #2f2f2c;
+}
+@supports (scrollbar-width: auto) {
+    * {
+        scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+        scrollbar-width: var(--scrollbar-width);
+    }
+}
+@supports selector(::-webkit-scrollbar) {
+    *::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-color-thumb);
+    }
+    *::-webkit-scrollbar-track {
+        background: var(--scrollbar-color-track);
+    }
+    *::-webkit-scrollbar {
+        max-width: var(--scrollbar-width-legacy);
+        max-height: var(--scrollbar-width-legacy);
+    }
+}

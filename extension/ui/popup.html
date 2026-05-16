@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Cascadia+Mono&display=swap" rel="stylesheet" />
+  <link href="./css/main.css" rel="stylesheet" />
+  <title>BetterSparx</title>
+
+  <style>
+    /* Hide default inputs but keep them functional */
+    input[type="checkbox"],
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    html, body {
+      width: 212px;
+      height: 300px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: rgba(14,14,14,1);
+      font-family: 'Cascadia Mono';
+    }
+
+    /* Label containers */
+    .check,
+    .radio {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    /* Checkbox / radio box */
+    .check .box,
+    .radio .box {
+      width: 17px;
+      height: 17px;
+      background: rgba(52,52,52,1);
+      border: 1px solid white;
+      border-radius: 2px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* Checked state */
+    .check input:checked + .box,
+    .radio input:checked + .box {
+      background: rgba(55,125,255,1);
+    }
+
+    /* Text */
+    .label-text {
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Buttons */
+    .btn {
+      position: absolute;
+      width: 174px;
+      height: 31px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Cascadia Mono';
+      font-weight: bold;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .btn.purple {
+      background: rgba(88, 101, 242, 1);
+      color: white;
+    }
+
+    .btn.green {
+      background: rgba(76,214,34,1);
+      color: black;
+    }
+
+    .btn.gray {
+      background: rgba(217,217,217,1);
+      color: black;
+    }
+
+    .btn.small {
+      width: 60px;
+      height: 20px;
+      font-size: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="v10_2">
+
+    <!-- Header -->
+    <div class="v10_3"></div>
+    <span class="v10_4">BetterSparx</span>
+
+    <!-- Checkboxes -->
+    <label class="check" style="top:38px; left:10px;">
+      <input type="checkbox" data-setting="antiDoxToggle" checked>
+      <div class="box"></div>
+      <span class="label-text">Anti-Dox</span>
+    </label>
+
+    <label class="check" style="top:66px; left:10px;">
+      <input type="checkbox" data-setting="allowCopy">
+      <div class="box"></div>
+      <span class="label-text">Allow Copy</span>
+    </label>
+
+    <!-- Section label -->
+    <span class="v10_25">Main &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Top</span>
+
+    <!-- Theme (radio group) -->
+    <label class="radio" style="top:123px; left:10px;">
+      <input type="radio" name="theme" id="DarkMode">
+      <div class="box"></div>
+      <span class="label-text">Dark</span>
+    </label>
+
+    <label class="radio" style="top:151px; left:10px;">
+      <input type="radio" name="theme" id="LightMode" checked>
+      <div class="box"></div>
+      <span class="label-text">Light</span>
+    </label>
+
+    <label class="radio" style="top:123px; left:105px;">
+      <input type="radio" name="toptheme" id="EXT-PurpleTop">
+      <div class="box"></div>
+      <span class="label-text">Purple</span>
+    </label>
+
+    <label class="radio" style="top:151px; left:105px;">
+      <input type="radio" name="toptheme" id="EXT-OrangeTop" checked>
+      <div class="box"></div>
+      <span class="label-text">Orange</span>
+    </label>
+
+    <label class="radio" style="top:179px; left:105px;">
+      <input type="radio" name="toptheme" id="EXT-RedTop">
+      <div class="box"></div>
+      <span class="label-text">Red</span>
+    </label>
+
+    <!-- Buttons -->
+    <button class="btn gray" id="ImportCustom" style="top:216px; left:18px;">
+      Import Custom
+    </button>
+
+    <button class="btn green" id="CopyCookies" style="top:256px; left:18px;">
+      Copy Cookies
+    </button>
+    
+    <button class="btn purple small" id="DiscordButton" style="top:5px; right:7px;">
+      Discord
+    </button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
