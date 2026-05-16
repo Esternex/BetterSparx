@@ -53,6 +53,10 @@ a:active { color: #1a1a1a; }
     color: var(--question-text-colour);
 }
 
+[class*="_TopBanner_"] {
+    background-color: #65c2ff !important;
+}
+
 .SparxPlusSecondaryButton { background-color: #111111; }
 .SparxPlusSecondaryButton:hover { background-color: #1a1a1a !important; }
 .SparxPlusKeypadButton { background-color: #181818; color: var(--palette-light-grey); }
@@ -93,7 +97,7 @@ a:active { color: #1a1a1a; }
 .WarningText { color: var(--colours-text-warning-message); }
 .SparxPlusWarning span { color: var(--colours-text-warning-message); }
 
-[style*="background-color: rgb(255, 255, 255)"],
+[style*="background-color: rgb(0, 0, 0)"],
 [style*="background-color: white"],
 [style*="background: white"] {
     background-color: #0d0d0d !important;
@@ -117,8 +121,6 @@ html, body, #root, [class*="App"], [class*="swclient"] {
     background: #0a0a0a !important;
     background-image: none !important;
 }
-
---swclient-background: #0a0a0a !important;
 
 [style*="background: linear-gradient"],
 [style*="background-image: linear-gradient"] {
