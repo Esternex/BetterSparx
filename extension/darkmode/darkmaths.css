@@ -112,3 +112,16 @@ a:active { color: #1a1a1a; }
     *::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
     *::-webkit-scrollbar-track { background: #111; }
 }
+/* override the sparx gradient background */
+html, body, #root, [class*="App"], [class*="swclient"] {
+    background: #0a0a0a !important;
+    background-image: none !important;
+}
+
+--swclient-background: #0a0a0a !important;
+
+[style*="background: linear-gradient"],
+[style*="background-image: linear-gradient"] {
+    background: #0a0a0a !important;
+    background-image: none !important;
+}
