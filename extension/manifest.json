@@ -14,14 +14,30 @@
     "tabs"
   ],
   "host_permissions": [
-    "*://*.sparx-learning.com/*"
+    "*://*.sparx-learning.com/*",
+    "*://*.sparxmaths.uk/*",
+    "*://*.sparxmaths.com/*"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "darkmode/darkmaths.css",
+        "darkmode/defaultmaths.css"
+      ],
+      "matches": [
+        "*://*.sparx-learning.com/*",
+        "*://*.sparxmaths.uk/*",
+        "*://*.sparxmaths.com/*"
+      ]
+    }
+  ],
   "content_scripts": [
     {
-      "matches": ["*://*.sparx-learning.com/*"],
+      "matches": [
+        "*://*.sparx-learning.com/*",
+        "*://*.sparxmaths.uk/*",
+        "*://*.sparxmaths.com/*"
+      ],
       "js": ["darkmode/main.js"]
     }
   ]
