@@ -16,6 +16,13 @@ async function sendDarkMode(state) {
     });
 }
 
+async function pullFullName() {
+    const el = document.querySelector('span._StudentName_');
+    const fullname = el.textContent;
+
+    return fullname;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const discordButton = document.getElementById("DiscordButton");
