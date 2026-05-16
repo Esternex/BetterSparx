@@ -23,7 +23,7 @@ async function pullFullName() {
     return fullname;
 }
 
-function removeNameFromPage(fullName) {
+async function removeNameFromPage(fullName) {
     const parts = fullName.trim().split(/\s+/);
     const firstName = parts[0];
     const lastName = parts[parts.length - 1];
@@ -43,16 +43,41 @@ function removeNameFromPage(fullName) {
         'gi'
     );
 
-    document.querySelectorAll('*').forEach(el => {
+    function redactElement(el) {
         if (['SCRIPT', 'STYLE'].includes(el.tagName)) return;
 
         for (const node of el.childNodes) {
             if (node.nodeType === Node.TEXT_NODE && pattern.test(node.textContent)) {
-                el.remove();                
+                el.remove();
                 break;
             }
         }
+    }
+
+    document.querySelectorAll('*').forEach(redactElement);
+
+    const observer = new MutationObserver(mutations => {
+        for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    redactElement(node);
+                    node.querySelectorAll('*').forEach(redactElement);
+                }
+
+                if (node.nodeType === Node.TEXT_NODE && pattern.test(node.textContent)) {
+                    node.parentElement?.remove();
+                }
+            }
+        }
     });
+
+    observer.observe(document.body, {
+        childList: true,   
+        subtree: true,     
+        characterData: true 
+    });
+
+    return observer;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -75,12 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (antiDoxxToggle) {
+        observer = NaN
+
         if (antiDoxxToggle.checked == true) { // already checked
-            name = pullFullName()
+            observer = removeNameFromPage(name)
         }
 
         antiDoxxToggle.addEventListener("change", () => {
-
+            if (antiDoxxToggle.checked == true) {
+                observer = removeNameFromPage(name)
+            } else {
+                observer.disconnect();
+                observer = NaN
+            }
         }); 
     }
 });
