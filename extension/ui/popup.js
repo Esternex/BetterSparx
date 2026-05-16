@@ -23,10 +23,44 @@ async function pullFullName() {
     return fullname;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function removeNameFromPage(fullName) {
+    const parts = fullName.trim().split(/\s+/);
+    const firstName = parts[0];
+    const lastName = parts[parts.length - 1];
+    const firstInitial = firstName[0];
 
+    const variations = [
+        fullName,
+        `${lastName}, ${firstName}`,
+        `${firstInitial}. ${lastName}`,
+        `${firstName} ${lastName[0]}.`,
+        firstName,
+        lastName,
+    ];
+
+    const pattern = new RegExp(
+        variations.map(v => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'),
+        'gi'
+    );
+
+    document.querySelectorAll('*').forEach(el => {
+        if (['SCRIPT', 'STYLE'].includes(el.tagName)) return;
+
+        for (const node of el.childNodes) {
+            if (node.nodeType === Node.TEXT_NODE && pattern.test(node.textContent)) {
+                el.remove();                
+                break;
+            }
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const antiDoxxToggle = document.getElementById("antiDoxToggle");
     const discordButton = document.getElementById("DiscordButton");
     const darkToggle = document.getElementById("DarkMode");
+
+    name = pullFullName()
 
     if (discordButton) {
         discordButton.addEventListener("click", () => {
@@ -38,5 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         darkToggle.addEventListener("change", () => {
             sendDarkMode(darkToggle.checked);
         });
+    }
+
+    if (antiDoxxToggle) {
+        if (antiDoxxToggle.checked == true) { // already checked
+            name = pullFullName()
+        }
+
+        antiDoxxToggle.addEventListener("change", () => {
+
+        }); 
     }
 });
