@@ -1,190 +1,114 @@
 :root {
-    --colours-primary: var(--palette-white);
-    --colours-interactable: var(--palette-light-blue);
-    /*#4f4f4a;*/
-    /* blue highlights */
-    --colours-nav-bar: #2a2a28;
-    --colours-nav-bar-hover: #2f2f2c;
-    --colours-page-background: #202020;
-    /* white background */
-    --colours-page-background-gradient: #2a2a28;
-    /* white background gradient for questions */
-    --colours-plain-background: #2a2a28;
-    /* panel bg */
-    --colours-plain-background-inverted: #3b3b37;
-    --colours-nested-item: #2f2f2c;
-    /* colour option bg 8 */
-    --colours-nested-item-hover: #3b3b37;
-    /* colour option bg 8 */
-    --colours-nested-item-correct: rgba(12 111 69 1);
+    --colours-nav-bar: #0d0d0d;
+    --colours-nav-bar-hover: #141414;
+    --colours-page-background: #0a0a0a;
+    --colours-page-background-gradient: #0d0d0d;
+    --colours-plain-background: #0d0d0d;
+    --colours-plain-background-inverted: #181818;
+    --colours-nested-item: #111111;
+    --colours-nested-item-hover: #1a1a1a;
+    --colours-nested-item-correct: rgba(12, 111, 69, 1);
     --colours-text-heading: var(--palette-light-grey);
-    /*text*/
     --colours-text-body: var(--palette-light-grey);
     --colours-text-body-inverted: var(--palette-light-grey);
-    --colours-popover-overlay-background: rgba(44, 44, 41, 1);
-    --colours-locked: #202020;
-    --colours-locked-dark: #3b3b37;
-    --colours-disabled: #202020;
-    --colours-light-background: #202020;
-    /* lets make it not that */
-    /*changed */
-    --colours-background-info: #2a2a28;
-    --colours-background-highlighted: #3b3b37;
-    --colours-background-white-transparent: #3b3b37;
+    --colours-popover-overlay-background: rgba(10, 10, 10, 0.97);
+    --colours-locked: #0a0a0a;
+    --colours-locked-dark: #181818;
+    --colours-disabled: #0a0a0a;
+    --colours-light-background: #0a0a0a;
+    --colours-background-info: #0d0d0d;
+    --colours-background-highlighted: #1a1a1a;
+    --colours-background-white-transparent: #1a1a1a;
     --colours-tab-hover: var(--palette-dark-blue);
     --colours-text-secondary: var(--palette-white);
-    --colours-secondary: #3b3b37;
+    --colours-secondary: #181818;
     --colours-selected: var(--palette-light-blue);
-    --colours-primary: var(--palette-black);
     --colours-background-light: var(--palette-black);
-    --colours-regular-background: #2f2f2c;
-    --colours-item-hover: #3b3b37;
-    --colours-item: #2f2f2c;
+    --colours-regular-background: #111111;
+    --colours-item-hover: #1a1a1a;
+    --colours-item: #111111;
     --colours-unstarted: var(--palette-light-grey);
-    --colours-question-background: #2f2f2c;
+    --colours-question-background: #111111;
     --question-text-colour: var(--palette-light-grey) !important;
-    --secondary-bg-hover: #3b3b37 !important;
-    --secondary-bg: #2f2f2c !important;
-    --spx-button-outlined-color: var(--palette-dark-blue) !important;
-    --swclient-background: linear-gradient(120.87deg, var(--colours-page-background) 0%, var(--colours-page-background) 48%, var(--colours-page-background-gradient) 48%, var(--colours-page-background) 100%);
-    --spx-shadow-sm: 0px 2px 2px rgba(74, 76, 82, 0.5);
-    --spx-shadow-sm-dark: 0px 2px 2px rgba(57, 60, 65, .3);
-    --spx-shadow-md: 0px 3px 5px rgba(57, 60, 65, .3);
-    --spx-shadow-md-dark: 0px 3px 5px rgba(57, 60, 65, .3);
-    --spx-shadow-md-extradark: 0px 3px 5px rgba(45, 45, 45, 1);
-    --spx-shadow-lg: 0px 4px 11px -1px rgba(45, 47, 50, 0.8);
-    --spx-shadow-lg-dark-blue: 0px 4px 11px -1px var(--palette-dark-blue);
-    --spx-shadow-lg-top: 0px -3px 11px rgba(128, 128, 128, .2);
+    --secondary-bg-hover: #1a1a1a !important;
+    --secondary-bg: #111111 !important;
+    --spx-shadow-sm: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    --spx-shadow-md: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    --spx-shadow-lg: 0px 4px 11px -1px rgba(0, 0, 0, 0.9);
+    --spx-shadow-lg-top: 0px -3px 11px rgba(0, 0, 0, 0.4);
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.SparxPlusSubHeading {
-    color: var(--palette-light-grey) !important
+
+body { background-color: #0a0a0a; }
+
+p, h1, h2, h3, h4, h5, h6, .SparxPlusSubHeading {
+    color: var(--palette-light-grey) !important;
 }
-span {
-    color: var(--palette-light-grey)
-}
-a {
-    text-decoration-color: white;
-    color: white;
-}
-a:active {
-    text-decoration-color: #3b3b37;
-    color: #3b3b37;
-}
-/* changing colour of question text */
-/* this class is set by api.js */
+
+span { color: var(--palette-light-grey); }
+a { color: white; text-decoration-color: white; }
+a:active { color: #1a1a1a; }
+
 .SparxPlusTextElement {
     --question-text-colour: var(--palette-light-grey) !important;
     color: var(--question-text-colour);
 }
-/* changing colour of secondary buttons */
-/* this class is set by api.js */
-.SparxPlusSecondaryButton {
-    background-color: #2f2f2c;
-}
-.SparxPlusKeypadButton {
-    background-color: #3b3b37;
+
+.SparxPlusSecondaryButton { background-color: #111111; }
+.SparxPlusSecondaryButton:hover { background-color: #1a1a1a !important; }
+.SparxPlusKeypadButton { background-color: #181818; color: var(--palette-light-grey); }
+.SparxPlusInlineSlotOptions { background-color: #181818 !important; }
+.SparxPlusOption:hover { background: #1a1a1a !important; }
+.SparxPlusOptionSelected:hover { background: var(--button-colour) !important; }
+.SparxPlusCardContent { background: #181818 !important; }
+.SparxPlusCardContentSelected { border-width: 5px; }
+.SparxPlusSelectShared { background-color: #181818 !important; }
+.SparxPlusMarkByPart { background-color: #2a1a1a !important; }
+.SparxPlusMarkByPart.SparxPlusIsCorrect { background-color: #1a3329 !important; }
+
+.SparxPlusTextFieldComponent,
+.SparxPlusTextField {
+    background: #181818 !important;
     color: var(--palette-light-grey);
+    border-color: #2a2a2a !important;
 }
-.SparxPlusIndependentLearningNoContentMessageText {
-    color: var(--palette-light-grey);
-}
-.SparxPlusInlineSlotOptions {
-    background-color: #3b3b37 !important;
-}
+
 .SparxPlusTable td,
 .SparxPlusTable tr,
 .SparxPlusTable th {
-    background-color: #3b3b37 !important;
+    background-color: #181818 !important;
+    border-color: #222 !important;
 }
-.SparxPlusSecondaryButton:hover {
-    background-color: #3b3b37 !important;
+
+.SparxPlusDisabled { color: #555 !important; }
+.SparxPlusButtonGhost:not(:disabled):hover { background-color: rgba(255, 255, 255, 0.07); }
+.SparxPlusIndependentLearningNoContentMessageText { color: var(--palette-light-grey); }
+.SparxPlusTopicFilterLabel { color: var(--palette-light-grey) !important; }
+.SparxPlusSupportTipsText { color: var(--palette-light-grey) !important; }
+
+.notificationDiv { background-color: #111111 !important; }
+.notificationText { color: var(--palette-light-grey) !important; }
+
+.InfoText { color: rgb(42, 169, 173); }
+.experimental { color: white !important; }
+.WarningText { color: var(--colours-text-warning-message); }
+.SparxPlusWarning span { color: var(--colours-text-warning-message); }
+
+[style*="background-color: rgb(255, 255, 255)"],
+[style*="background-color: white"],
+[style*="background: white"] {
+    background-color: #0d0d0d !important;
 }
-.notificationDiv {
-    background-color: #2f2f2c !important;
-}
-.notificationText {
-    color: var(--palette-light-grey) !important;
-}
-.SparxPlusTopicFilterLabel {
-    color: var(--palette-light-grey) !important;
-}
-.SparxPlusSupportTipsText {
-    color: var(--palette-light-grey) !important;
-}
-.SparxPlusOption:hover {
-    background: #3b3b37 !important;
-}
-.SparxPlusOptionSelected:hover {
-    background: var(--button-colour) !important;
-}
-.SparxPlusCardContent {
-    background: #3b3b37 !important;
-}
-.SparxPlusCardContentSelected {
-    border-width: 5px;
-}
-.SparxPlusMarkByPart.SparxPlusIsCorrect {
-    background-color: #434d49 !important;
-}
-.SparxPlusMarkByPart {
-    background-color: rgb(93 80 80) !important;
-}
-.SparxPlusSelectShared {
-    background-color: #3b3b37 !important;
-}
-.SparxPlusTextFieldComponent,
-.SparxPlusTextField {
-    background: #3b3b37 !important;
-    color: var(--palette-light-grey);
-}
-.SparxPlusDisabled {
-    color: #7e7e78 !important;
-}
-.experimental {
-    color: white !important;
-}
-.SparxPlusButtonGhost:not(:disabled):hover {
-    background-color: rgba(128, 128, 128, .2);
-}
-.WarningText {
-    color: var(--colours-text-warning-message);
-}
-.SparxPlusWarning span {
-    color: var(--colours-text-warning-message);
-}
-.InfoText {
-    color: rgb(42 169 173);
-}
-/* make loading screen dark, make question flashing disappear */
-body {
-    background-color: #2a2a28;
-}
+
 * {
-    --scrollbar-color-thumb: #3b3b37;
-    --scrollbar-color-track: #2f2f2c;
+    --scrollbar-color-thumb: #222;
+    --scrollbar-color-track: #111;
 }
+
 @supports (scrollbar-width: auto) {
-    * {
-        scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
-        scrollbar-width: var(--scrollbar-width);
-    }
+    * { scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track); }
 }
+
 @supports selector(::-webkit-scrollbar) {
-    *::-webkit-scrollbar-thumb {
-        background: var(--scrollbar-color-thumb);
-    }
-    *::-webkit-scrollbar-track {
-        background: var(--scrollbar-color-track);
-    }
-    *::-webkit-scrollbar {
-        max-width: var(--scrollbar-width-legacy);
-        max-height: var(--scrollbar-width-legacy);
-    }
+    *::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
+    *::-webkit-scrollbar-track { background: #111; }
 }
