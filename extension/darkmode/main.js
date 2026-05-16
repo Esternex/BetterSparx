@@ -31,7 +31,7 @@ const DarkMode = (() => {
 
             setCSS("darkmode/darkmaths.css");
 
-            document.body.style.background = "#2a2a28";
+          document.body.style.cssText += "background: #0a0a0a !important; background-image: none !important;";
 
             document.querySelectorAll("img, video").forEach(el => {
                 if (_settings.darkModeImages) {
